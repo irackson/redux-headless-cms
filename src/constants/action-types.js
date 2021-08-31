@@ -1,0 +1,1 @@
+export const FETCH_VALID_ROUTES = 'FETCH_VALID_ROUTES';
