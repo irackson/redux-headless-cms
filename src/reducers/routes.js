@@ -18,8 +18,15 @@ export const routeReducer = (state = initialState, action) => {
 export const loadRoutes =
     ({ cmsBaseUrl, restDir }) =>
     async (dispatch, _) => {
-        const validRoutes = await fetch(`${cmsBaseUrl}${restDir}`).then((res) =>
-            res.json()
-        );
-        dispatch(setRoutes(validRoutes));
+        let validRoutes = {};
+        try {
+            validRoutes = await fetch(`${cmsBaseUrl}${restDir}`).then((res) =>
+                res.json()
+            );
+        } catch (error) {
+            console.error(error.message);
+            validRoutes[maintenanceEndpoint] = 'Maintenance';
+        } finally {
+            dispatch(setRoutes(validRoutes));
+        }
     };
