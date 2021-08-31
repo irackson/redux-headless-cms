@@ -3,6 +3,7 @@ import { cmsBaseUrl } from 'constants/urls';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { loadContent } from 'reducers/content';
+import Container from 'components/content/Container';
 const DynamicRoute = (props) => {
     const endpoint = props.match.path;
     const routeTitle = useSelector(
@@ -12,14 +13,27 @@ const DynamicRoute = (props) => {
 
     useEffect(() => {
         dispatch(loadContent({ cmsBaseUrl, endpoint }));
-    }, [dispatch]);
+    }, [dispatch, endpoint]);
 
     const content = useSelector((state) => state.content[endpoint]);
 
     return (
         <div>
             {routeTitle}
-            <div>{JSON.stringify(content)}</div>
+            {content
+                ? content.map((item, i) => (
+                      <Container
+                          key={i}
+                          items={item.items}
+                          className={item.className}
+                          flexDirection={item.flexDirection}
+                          flexWrap={item.flexWrap}
+                          justifyContent={item.justifyContent}
+                          alignItems={item.alignItems}
+                          width={item.width}
+                      />
+                  ))
+                : null}
         </div>
     );
 };

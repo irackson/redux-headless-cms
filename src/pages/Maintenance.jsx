@@ -1,7 +1,5 @@
 import { useEffect } from 'react';
-import { useHistory } from 'react-router';
-const Maintenance = (props) => {
-    const history = useHistory();
+const Maintenance = () => {
     useEffect(() => {
         window.location = '/maintenance.html';
     }, []);

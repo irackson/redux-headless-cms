@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const Nav = (props) => {
     const routes = useSelector((state) => state.routes);
-    const dispatch = useDispatch();
     return (
         <nav>
             <Link to="/">Home</Link>
