@@ -6,19 +6,20 @@ import Footer from 'components/layout/Footer';
 import Landing from 'pages/Landing';
 import { cmsBaseUrl, restDir } from 'constants/urls';
 import { useEffect } from 'react';
-import { setRoutes } from 'actions';
-
+import { loadRoutes } from 'reducers/routes';
+// import { setRoutes } from 'actions';
 function App() {
     const validRoutes = useSelector((state) => state.routes);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(setRoutes({ cmsBaseUrl, restDir }));
-    }, []);
+        dispatch(loadRoutes({ cmsBaseUrl, restDir }));
+    }, [dispatch]);
 
     return (
         <div className="App">
             <Header />
+            <div>{JSON.stringify(validRoutes)}</div>
             <Switch>
                 <Route
                     exact

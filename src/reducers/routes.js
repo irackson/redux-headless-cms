@@ -1,6 +1,6 @@
 import { maintenanceEndpoint } from 'constants/urls';
-import { FETCH_VALID_ROUTES } from 'constants/action-types';
-import { getRoutes } from 'utils/api';
+import { SET_ROUTES } from 'constants/action-types';
+import { setRoutes } from 'actions';
 
 const initialState = {
     maintenanceEndpoint: maintenanceEndpoint,
@@ -8,9 +8,18 @@ const initialState = {
 
 export const routeReducer = (state = initialState, action) => {
     switch (action.type) {
-        case FETCH_VALID_ROUTES:
-            return { ...state, validRoutes: getRoutes(action.payload) };
+        case SET_ROUTES:
+            return { ...state, validRoutes: action.payload };
         default:
             return state;
     }
 };
+
+export const loadRoutes =
+    ({ cmsBaseUrl, restDir }) =>
+    async (dispatch, _) => {
+        const validRoutes = await fetch(`${cmsBaseUrl}${restDir}`).then((res) =>
+            res.json()
+        );
+        dispatch(setRoutes(validRoutes));
+    };

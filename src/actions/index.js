@@ -1,8 +1,8 @@
-import { FETCH_VALID_ROUTES } from 'constants/action-types';
+import { SET_ROUTES } from 'constants/action-types';
 
 export const setRoutes = (apiInfo) => {
     return {
-        type: FETCH_VALID_ROUTES,
+        type: SET_ROUTES,
         payload: apiInfo,
     };
 };
