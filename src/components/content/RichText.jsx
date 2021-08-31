@@ -9,7 +9,7 @@ const RichText = ({ textType, className, text, style: textTransforms }) => {
                 className={className}
                 style={{ textTransform: textTransforms }}
             >
-                {text}
+                <p>{text}</p>
             </div>
         );
     } else if (textType === 'html') {
