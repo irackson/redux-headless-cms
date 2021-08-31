@@ -1,4 +1,4 @@
-import { Redirect, Route, Switch, useHistory, Link } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import 'App.scss';
 import Header from 'components/layout/Header';
@@ -8,10 +8,9 @@ import { cmsBaseUrl, maintenanceEndpoint, restDir } from 'constants/urls';
 import { useEffect } from 'react';
 import { loadRoutes } from 'reducers/routes';
 import Maintenance from 'pages/Maintenance';
+import DynamicRoute from 'pages/DynamicRoute';
 
 function App() {
-    const history = useHistory();
-
     const routes = useSelector((state) => state.routes);
     const dispatch = useDispatch();
 
@@ -30,16 +29,14 @@ function App() {
                         <Route
                             exact
                             path="/"
-                            render={(props) => <Landing {...props} />}
+                            render={(rp) => <Landing {...rp} />}
                         ></Route>
                         {Object.keys(routes.validRoutes).map((route, i) => (
                             <Route
                                 key={i}
                                 exact
                                 path={route}
-                                render={(props) => (
-                                    <div>{routes.validRoutes[route]}</div>
-                                )}
+                                render={(rp) => <DynamicRoute {...rp} />}
                             />
                         ))}
                         <Route

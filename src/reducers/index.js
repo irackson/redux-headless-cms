@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import { routeReducer } from './routes';
+import { contentReducer } from './content';
+import { routesReducer } from './routes';
 
 export const rootReducer = combineReducers({
-    routes: routeReducer,
+    routes: routesReducer,
+    content: contentReducer,
 });

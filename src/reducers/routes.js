@@ -6,7 +6,7 @@ const initialState = {
     maintenanceEndpoint: maintenanceEndpoint,
 };
 
-export const routeReducer = (state = initialState, action) => {
+export const routesReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_ROUTES:
             return { ...state, validRoutes: action.payload };

@@ -6,6 +6,7 @@ const Nav = (props) => {
     const dispatch = useDispatch();
     return (
         <nav>
+            <Link to="/">Home</Link>
             {Object.keys(routes.validRoutes).map((route, i) => (
                 <Link to={route} key={i}>
                     {routes.validRoutes[route]}

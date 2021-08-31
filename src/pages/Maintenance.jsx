@@ -5,7 +5,7 @@ const Maintenance = (props) => {
     useEffect(() => {
         window.location = '/maintenance.html';
     }, []);
-    return <></>;
+    return <span></span>;
 };
 
 export default Maintenance;
