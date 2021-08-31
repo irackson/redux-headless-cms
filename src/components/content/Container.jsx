@@ -48,18 +48,28 @@ const Container = ({
     };
 
     return (
-        <section>
+        <section
+            className={className}
+            style={{
+                display: 'flex',
+                flexDirection: flexDirection ?? null,
+                flexWrap: flexWrap ?? null,
+                justifyContent: justifyContent ?? null,
+                alignItems: alignItems ?? null,
+                width: width ? `${width * 100}%` : null,
+            }}
+        >
             {items.map((item, i) => (
                 <div
                     key={i}
-                    className={className}
+                    className={item.className}
                     style={{
                         display: 'flex',
-                        flexDirection: flexDirection ?? null,
-                        flexWrap: flexWrap ?? null,
-                        justifyContent: justifyContent ?? null,
-                        alignItems: alignItems ?? null,
-                        width: width ? `${width * 100}%` : null,
+                        flexDirection: item.flexDirection ?? null,
+                        flexWrap: item.flexWrap ?? null,
+                        justifyContent: item.justifyContent ?? null,
+                        alignItems: item.alignItems ?? null,
+                        width: item.width ? `${item.width * 100}%` : null,
                     }}
                 >
                     {renderElementType(item)}

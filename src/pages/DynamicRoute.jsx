@@ -19,12 +19,12 @@ const DynamicRoute = (props) => {
 
     return (
         <div>
-            {routeTitle}
+            <h1 style={{ color: 'red' }}>{routeTitle}</h1>
             {content
                 ? content.map((item, i) => (
                       <Container
                           key={i}
-                          items={item.items}
+                          items={item.items ?? [item]}
                           className={item.className}
                           flexDirection={item.flexDirection}
                           flexWrap={item.flexWrap}
