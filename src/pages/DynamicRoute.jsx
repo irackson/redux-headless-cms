@@ -20,7 +20,6 @@ const DynamicRoute = (props) => {
 
     return (
         <>
-            <h1 style={{ color: 'blue' }}>{routeTitle}</h1>
             {contents
                 ? contents.map((content, i) => (
                       <ContentComponent key={i} content={content} />

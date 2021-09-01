@@ -5,12 +5,20 @@ const Nav = (props) => {
     const routes = useSelector((state) => state.routes);
     return (
         <nav>
-            <Link to="/">Home</Link>
-            {Object.keys(routes.validRoutes).map((route, i) => (
-                <Link to={route} key={i}>
-                    {routes.validRoutes[route]}
-                </Link>
-            ))}
+            <ul className="nav">
+                <li className="nav-item">
+                    <Link to="/" className="nav-link ">
+                        Home
+                    </Link>
+                </li>
+                {Object.keys(routes.validRoutes).map((route, i) => (
+                    <li key={i} className="nav-item">
+                        <Link to={route} className="nav-link">
+                            {routes.validRoutes[route]}
+                        </Link>
+                    </li>
+                ))}
+            </ul>
         </nav>
     );
 };

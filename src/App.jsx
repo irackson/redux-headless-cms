@@ -25,28 +25,30 @@ function App() {
             return (
                 <div className="App">
                     <Header />
-                    <Switch>
-                        <Route
-                            exact
-                            path="/"
-                            render={(rp) => <Landing {...rp} />}
-                        ></Route>
-                        {Object.keys(routes.validRoutes).map((route, i) => (
+                    <main>
+                        <Switch>
                             <Route
-                                key={i}
                                 exact
-                                path={route}
-                                render={(rp) => <DynamicRoute {...rp} />}
-                            />
-                        ))}
-                        <Route
-                            render={() => (
-                                <Redirect
-                                    to={Object.keys(routes.validRoutes)[0]}
+                                path="/"
+                                render={(rp) => <Landing {...rp} />}
+                            ></Route>
+                            {Object.keys(routes.validRoutes).map((route, i) => (
+                                <Route
+                                    key={i}
+                                    exact
+                                    path={route}
+                                    render={(rp) => <DynamicRoute {...rp} />}
                                 />
-                            )}
-                        />
-                    </Switch>
+                            ))}
+                            <Route
+                                render={() => (
+                                    <Redirect
+                                        to={Object.keys(routes.validRoutes)[0]}
+                                    />
+                                )}
+                            />
+                        </Switch>
+                    </main>
                     <Footer />
                 </div>
             );

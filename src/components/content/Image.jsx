@@ -1,5 +1,5 @@
 const placeholderHeight = 100;
-const Image = ({ className, alt = 'alt', height, src }) => {
+const Image = ({ className, alt, height, src }) => {
     return (
         <img
             className={className}
@@ -8,7 +8,10 @@ const Image = ({ className, alt = 'alt', height, src }) => {
                 maxHeight: `${height}px`,
                 alignSelf: 'center',
             }}
-            src={src ?? `https://via.placeholder.com/${placeholderHeight}`}
+            src={src}
+            onError={(e) =>
+                (e.target.src = `https://via.placeholder.com/${placeholderHeight}`)
+            }
         />
     );
 };
