@@ -1,3 +1,4 @@
+const placeholderHeight = 100;
 const Image = ({ className, alt = 'alt', height = 100, src }) => {
     return (
         <img
@@ -7,7 +8,7 @@ const Image = ({ className, alt = 'alt', height = 100, src }) => {
                 maxHeight: `${height}px`,
                 alignSelf: src ? 'initial' : 'center',
             }}
-            src={src ?? `https://via.placeholder.com/${height}`}
+            src={src ?? `https://via.placeholder.com/${placeholderHeight}`}
         />
     );
 };
