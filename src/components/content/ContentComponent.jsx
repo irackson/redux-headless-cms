@@ -44,5 +44,3 @@ const ContentComponent = ({ content }) => {
 };
 
 export default ContentComponent;
-
-// width: item.width ? `${item.width * 100}%` : null,

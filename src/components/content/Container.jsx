@@ -1,5 +1,16 @@
 import ContentComponent from './ContentComponent';
+import styled from 'styled-components';
 
+// 45% comes from an attempt to maintain the margins established by the referenced width of 0.3 --> (0.5 - (1 - 0.3 * 3) / 2) * 100%
+const DeliverableNineDiv = styled.div`
+    width: ${(props) =>
+        props.styledWidth ? `${props.styledWidth * 100}%` : undefined};
+    .order-element {
+        @media only screen and (max-width: 599px) {
+            width: 45%;
+        }
+    }
+`;
 const Container = ({
     children,
     className,
@@ -10,7 +21,7 @@ const Container = ({
     width,
 }) => {
     return (
-        <div
+        <DeliverableNineDiv
             className={className}
             style={{
                 display: 'flex',
@@ -18,13 +29,13 @@ const Container = ({
                 flexWrap,
                 justifyContent,
                 alignItems,
-                width: width ? `${width * 100}%` : null,
             }}
+            styledWidth={width}
         >
             {children.map((item, i) => (
                 <ContentComponent key={i} content={item} />
             ))}
-        </div>
+        </DeliverableNineDiv>
     );
 };
 
