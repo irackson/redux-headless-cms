@@ -1,15 +1,15 @@
-import { useEffect } from 'react';
-import { cmsBaseUrl } from 'constants/urls';
-
-import { useDispatch, useSelector } from 'react-redux';
-import { loadContent } from 'reducers/content';
 // import Container from 'components/content/Container';
 import ContentComponent from 'components/content/ContentComponent';
+import { cmsBaseUrl } from 'constants/urls';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { loadContent } from 'reducers/content';
+
 const DynamicRoute = (props) => {
     const endpoint = props.match.path;
-    const routeTitle = useSelector(
-        (state) => state.routes.validRoutes[endpoint]
-    );
+    // const routeTitle = useSelector(
+    //     (state) => state.routes.validRoutes[endpoint]
+    // );
     const dispatch = useDispatch();
 
     useEffect(() => {

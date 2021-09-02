@@ -1,9 +1,5 @@
-import { useEffect } from 'react';
 const Maintenance = () => {
-    useEffect(() => {
-        window.location = '/maintenance.html';
-    }, []);
-    return <span></span>;
+    return <h1>This site is currently under maintenance.</h1>;
 };
 
 export default Maintenance;

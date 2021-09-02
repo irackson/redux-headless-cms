@@ -1,6 +1,6 @@
-import { maintenanceEndpoint } from 'constants/urls';
-import { SET_ROUTES } from 'constants/action-types';
 import { setRoutes } from 'actions';
+import { SET_ROUTES } from 'constants/action-types';
+import { maintenanceEndpoint } from 'constants/urls';
 
 const initialState = {
     maintenanceEndpoint: maintenanceEndpoint,

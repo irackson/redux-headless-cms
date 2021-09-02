@@ -1,4 +1,4 @@
-import { SET_ROUTES, SET_CONTENT } from 'constants/action-types';
+import { SET_CONTENT, SET_ROUTES } from 'constants/action-types';
 
 export const setRoutes = (apiInfo) => {
     return {

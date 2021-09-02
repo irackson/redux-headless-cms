@@ -1,5 +1,5 @@
-import ContentComponent from './ContentComponent';
 import styled from 'styled-components';
+import ContentComponent from './ContentComponent';
 
 // 45% comes from an attempt to maintain the margins established by the referenced width of 0.3 --> (0.5 - (1 - 0.3 * 3) / 2) * 100%
 const DeliverableNineDiv = styled.div`
