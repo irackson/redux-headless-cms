@@ -766,7 +766,7 @@ const Landing = () => {
                         </div>
                         <a
                             className="l"
-                            href="https://raw.githubusercontent.com/Bounteous-Inc/headless-cms-assessment/main/routes.json"
+                            href="https://raw.githubusercontent.com/irackson/cms-filestore/main/routes.json"
                         >
                             <div className="d m1"></div>
                         </a>
