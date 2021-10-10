@@ -2,7 +2,7 @@ const Footer = () => {
     return (
         <div>
             <h6>
-                Submission by{' '}
+                Project by{' '}
                 <a
                     href="https://ianrackson.com/"
                     target="_blank"
