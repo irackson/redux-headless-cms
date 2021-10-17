@@ -1,5 +1,3 @@
-# CMS Frontend Engineer Coding Challenge
-
 ###### Headless CMS provider repository can be found at: <https://github.com/irackson/cms-filestore>
 
 ---
@@ -8,7 +6,7 @@
 
 1. Set up a one-way data flow state management library such as **Redux** or Flux
 
-2. Set up and make an API request to https://raw.githubusercontent.com/irackson/cms-filestore/main/routes.json to retrieve the valid routes your application should support, and store this value in the data store set up in _step 1_. If this API request fails, the application should default to directing all traffic to `/maintenance`. NOTE: The application must be dynamic so the URL used to request the routes can change at any point in time.
+2. Set up and make an API request to <https://raw.githubusercontent.com/irackson/cms-filestore/main/routes.json> to retrieve the valid routes your application should support, and store this value in the data store set up in _step 1_. If this API request fails, the application should default to directing all traffic to `/maintenance`. NOTE: The application must be dynamic so the URL used to request the routes can change at any point in time.
 
 3. Any requests outside the routes provided in the API response should display the first route provided.
 
@@ -50,7 +48,7 @@ _This component should be rendered as a flex container ( display: flex ), and wi
 
 #### Image Component
 
-_If the image cannot be loaded, then a 100x100 placeholder from placeholder.com should be utilized. https://placeholder.com/#How_To_Use_Our_Placeholders Images should set align-self: center; to avoid scaling in flex containers._
+_If the image cannot be loaded, then a 100x100 placeholder from placeholder.com should be utilized. <https://placeholder.com/#How_To_Use_Our_Placeholders> Images should set align-self: center; to avoid scaling in flex containers._
 
 -   type: "image"
 -   className: this value is sometimes provided to help with specific styling needs as needed, to target specific elements
